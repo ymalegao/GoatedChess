@@ -1,0 +1,21 @@
+I stuggled with his whole assignment actually, since I was sick last week and this week as well.
+From the class example, the moves that were being made only allowed for the piece that is 
+giving the king check to be taken. It did not consider blocking or moving a king out of chess
+as a valid mode. So to implement blocking, I wrote a line of attack funtion that allows for a piece to moves
+if the destination is in the line of attack of the piece that puts the king to chess. 
+In order for the king to move, we had to loop through the moves possible and see if there were spaces
+but also make sure that the king did not move into another check. 
+I still have not gotten the filtering of making the piece not able to move if it puts the king in check,
+but I have gotten everything else. 
+
+
+//updated readme
+
+I figured out why the class example was not working for me! It turns out when I was considering the enemy moves,
+I was not considering the new state in my move geneartions. So when I moved a pawn to block the check, and then generated 
+enemy moves, it did not see that the pawn was moved and considered it a bad move and deleted it. So what I needed to do was to
+add considering the state into my move geneartions. When I did this, the queen was finally able to see that the pawn was blocking the check
+and it was considered a good move. I was over complicating it before, and once I fixed this, I was able to not move into check,
+not castle into check, and block checks as well. So now everything is working. I also made a function that would check
+if the king was being attacked, so then if there were 0 moves and the king was being attacked, it would be checkmate.
+if there were 0 moves and the king was not being attacked, it would be stalemate.
