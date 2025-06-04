@@ -1,0 +1,14 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "CMake Debug",
+            "type": "lldb",
+            "request": "launch",
+            "program": "/Users/yashmalegaonkar/Documents/CMPM123/chess2/build/chess",
+            "args": [],
+            "cwd": "${fileDirname}",
+            "preLaunchTask": "build"
+        }
+    ]
+}
